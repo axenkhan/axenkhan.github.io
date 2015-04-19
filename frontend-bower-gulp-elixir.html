@@ -41,8 +41,8 @@
           2. Add package information (name, version) to bower.json dependencies and update bower:
           <pre>
             <code>
-              $ "dependencies": { ..., "package_name": "*" }
-              $ bower update
+            $ "dependencies": { ..., "package_name": "*" }
+            $ bower update
             </code>
           </pre>
         </li>
@@ -74,6 +74,67 @@
         <code>
           $ gulp              
           $ gulp --production (to minify) 
+        </code>
+      </pre>
+
+      <hr/>
+
+      <h3><strong>Laravel Elixir</strong></h3>
+      <p>Laravel Elixir provides a clean, fluent API for defining basic Gulp tasks for your Laravel application. Elixir supports several common CSS and JavaScript pre-processors, and even testing tools. If you've ever been confused about how to get started with Gulp and asset compilation, you will love Laravel Elixir!</p>
+      <p>All needed documentation can be found here: <a href="http://laravel.com/docs/5.0/elixir">laravel-elixir</a></p>
+
+      <p>To use Compass with Sass in Elixir.js you should uninstall current versions of compass and sass, and just install compass (this installation will automatically install needed version of sass).</p>
+      <pre>
+        <code>
+          $ sudo gem uninstall compass
+          $ sudo gem uninstall sass
+          $ sudo gem install compass
+        </code>
+      </pre>
+      
+      <p>After this commands you have to install an extension for laravel-elixir:</p>
+      <pre>
+        <code>$ npm install laravel-elixir-sass-compass -save</code>
+      </pre>
+      <p>Here's the documentation: <a href="https://github.com/JoeCianflone/laravel-elixir-sass-compass">laravel-elixir-sass-compass</a></p>
+      
+      <p><strong>USAGE:</strong></p>
+      <pre>
+        <code>
+          var elixir = require('laravel-elixir');
+          require('laravel-elixir-sass-compass');
+
+          /*
+          |--------------------------------------------------------------------------
+          | Elixir Asset Management
+          |--------------------------------------------------------------------------
+          |
+          | Elixir provides a clean, fluent API for defining some basic Gulp tasks
+          | for your Laravel application. By default, we are compiling the Less
+          | file for our application, as well as publishing vendor resources.
+          |
+          */
+
+          elixir(function(mix) {
+              mix.compass('app.scss', 'public/assets/stylesheets');
+          });
+        </code>
+      </pre>
+
+      <p><strong>NOTE:</strong> <i>app.scss</i> file will be looked for in <i>/resources/assets/<strong>scss</strong></i> folder, not <i>/resources/assets/<strong>sass</strong></i>folder, as in usual <i>Elixir</i>. But you can change it in <i>compass</i> configs:</p>
+      <pre>
+        <code>
+          elixir(function(mix) {
+              mix.compass('app.scss', 'public/assets/stylesheets', {
+                  modules: [],
+                  style: 'compressed',
+                  sass: 'resources/assets/sass',
+                  font: 'public/assets/fonts',
+                  image: 'public/assets/images',
+                  javascript: 'public/assets/javascripts',
+                  sourcemap: true
+              });
+          });
         </code>
       </pre>
 
