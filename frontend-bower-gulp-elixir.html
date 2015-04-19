@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Frontend : Bower, Gulp & Elixir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+
+    <section class="page-header">   
+      <h1 class="project-name">Frontend : Bower, Gulp & Elixir</h1>    
+      <h2 class="project-tagline"></h2>    
+    </section>
+
+    <section class="main-content">
+      <h3>Prerequisites.</h3>
+      <p>To install all these packages you need to have node.js installed (to use npm).</p>
+      <pre>
+        <code>
+          $ sudo apt-get update
+          $ sudo apt-get install nodejs
+        </code>
+      </pre>
+
+      <h3><strong>Bower.js</strong> | A package manager for the web.</h3>
+      <p>Bower works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for. Bower keeps track of these packages in a manifest file, bower.json. How you use packages is up to you.</p>
+      <p>Now you can instal bower.js globally:</p>
+      <pre><code>$ sudo npm install -g bower</code></pre>
+
+      <p>That’s it. Now, you have two ways to install new packages:</p>
+      <ul>
+        <li>
+          1. Install a needed package in terminal:
+          <pre><code>$ bower install {package_name} --save</code></pre>
+        </li>
+        <li>
+          2. Add package information (name, version) to bower.json dependencies and update bower:
+          <pre>
+            <code>
+              $ "dependencies": { ..., "package_name": "*" }
+              $ bower update
+            </code>
+          </pre>
+        </li>
+      </ul>
+      <p>For more look the official bower website: <a href="http://bower.io">bower.io</a></p>
+
+      <hr/>
+
+      <h3><strong>Gulp.js</strong> | Automate and enhance your workflow.</h3>
+      <p>Gulp is a streaming build system, by using node’s streams file manipulation is all done in memory, and a file isn’t written until you tell it to do so. You just tell gulp which files and in witch order must be compiled/concat/minified and that's it. It all works automatically.</p>
+      <p>To install <i>gulp.js</i> you need <i>node.js</i> installed (to use <i>npm</i> command)</p>
+      <pre>
+        <code>
+          $ sudo apt-get update
+          $ sudo apt-get install nodejs
+        </code>
+      </pre>
+      
+      <p>Now you can install <i>gulp.js</i> globally:</p>
+      <pre>
+        <code>
+          $ sudo npm install -g gulp
+          $ npm install
+        </code>
+      </pre>
+      
+      <p>To compile and concat all needed file just run:</p>
+      <pre>
+        <code>
+          $ gulp              
+          $ gulp --production (to minify) 
+        </code>
+      </pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">Manuals of <a href="//vk.com/alexeykhan">Alexey Khan</a> using <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
